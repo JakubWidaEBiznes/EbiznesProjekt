@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/jakub_wida/Documents/MagisterSem2/EBiznes/Projekt/Project/play-react-slick-foreign/app/models/ProductRepository.scala:6:15: imported `CategoryRepository' is permanently hidden by definition of class CategoryRepository in package models[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport models.CategoryRepository[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
