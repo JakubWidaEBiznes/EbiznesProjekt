@@ -1,0 +1,38 @@
+1. Utworzyć podstawową strukturę projektu.
+2. Routing
+3. REST CONNECTOR
+4. PODŁĄCZYĆ się do backa.
+5. ???
+6. Sprawdzić czy to działa na dockerze
+
+
+STRUKTURA projektu
+
+"Moduły"
+
+MAIN
+	LOGIN
+		-oauth
+	ROUTER
+		BROWSE
+			-search
+		PRODUCT
+			-buy
+			-edit
+			-remove
+		ADMIN
+			-add product
+			-deal order
+		USER
+			-cart
+			-order
+		REST
+			-test rest
+
+Klasy:
+	API
+		-obsługuje REST
+	USER
+		-czy jest adminem
+		-czy jest zalogowany
+		-może obsługiwać oauth.
