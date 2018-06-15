@@ -25,8 +25,8 @@ export default class RestTester extends Component {
 					<option value="POST">POST</option>
 				</select>
 				<button onClick={()=>{this.tryRest()}}>TryRest</button>
-				{this.state.response && <p>this.state.response</p>}
-
+				{this.state.response && <p>{this.state.response}</p>}
+				{this.state.error && <p>{this.state.error}</p>}
       </div>
     );
   }
@@ -56,12 +56,12 @@ tryRest(){
 
 onRestResponse(data){
 	console.log("onResponse:",data);
-	this.setState({response:data});
+	this.setState({response:JSON.stringify(data)});
 	}
 
 onRestError(data){
 	console.log("onError:",data);
-	this.setState({error:data});
+	this.setState({error:JSON.stringify(data)});
 	}
 }
 

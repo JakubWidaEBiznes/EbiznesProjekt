@@ -36,3 +36,79 @@ Klasy:
 		-czy jest adminem
 		-czy jest zalogowany
 		-może obsługiwać oauth.
+
+REST:
+
+GET search/:{categories}/:{keywords}
+	# returns list of products from database. All of them, we will worry about pages later
+	# products include categories and keywords
+	# also returns all categories
+
+GET product/:{product-id}
+	# returns product
+POST product <= {product object, with categories, and keywords}
+	# adds product
+PUT product/:{product-id} <= {product object, with categories, and keywords}
+	# replaces already existing product
+
+GET user/:{user-id}
+	# gets all info about user. If logged in, also their cart and orders.
+
+GET admin/:{user-id}
+	# gets all administrative data, orders, their state etc. only if logged in and user is admin.
+
+POST cart/:{user-id} <= {list of product id's to put in cart}
+	# adds items to cart of user.
+	# may return error if something goes bad.
+DELETE cart/:{user-id} <= {list of product id's to remove from cart}
+	# removes items from cart.
+	# may return error if something goes bad.
+
+POST buy/:{user-id} <= {}
+	#buys cart. adds itself to orders.
+
+POST resolve/:{order-id}
+	#sets orders to resolved
+	#only available to logged in admins.
+
+POST makeadmin/:{user-id}
+	#makes user an admin
+	#only available to logged in admins.
+
+JSON FORMATS:
+
+UserInfo
+	id:Number
+	name:String
+	joindate:String
+	isAdmin:Boolean
+	cart:CART
+	address:ADDRESS
+	orders:[ORDERS]
+
+Product
+	id:Number
+	name:String
+	description:String
+	adddate:String
+	stock:Number
+	price:Number
+	keywords:[String]
+	categories:[String]
+
+Cart
+	user:USERINFO
+	products:[PRODUCT]
+
+Order
+	user:USERINFO
+	products:[PRODUCT]
+	state:String #PENDING, RESOLVED
+	address:ADDRESS
+
+Address:
+	city:String
+	zipcode:Number
+	street:String
+	housenum:String
+	contactTelephone:String
