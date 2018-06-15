@@ -13,7 +13,7 @@ const sampleProduct1 = {
 	}
 
 const sampleProduct2 = {
-	id:0,
+	id:1,
 	name:"sandwich",
 	description:"bread with ham",
 	adddate:"01:12:1995",
@@ -24,7 +24,7 @@ const sampleProduct2 = {
 	}
 
 const sampleProduct3 = {
-	id:0,
+	id:2,
 	name:"ciabatta",
 	description:"italian baguette",
 	adddate:"06:12:1998",
@@ -37,13 +37,15 @@ const sampleProduct3 = {
 
 const sampleSearchResult = {
 	categories:["vegetables","meats","breads"],
+	keywords:["italian"],
 	products:[sampleProduct1,sampleProduct2,sampleProduct3]
 	}
 
 export default class Products{
 
-	static getSearch(keywords,categories){
+	static getSearch(categories,keywords){
 		return new Promise((resolve)=>{
+				console.log("searching",categories,keywords)
         setTimeout(resolve(sampleSearchResult), 1000);
     	});
 		}

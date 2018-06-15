@@ -1,2 +1,2 @@
-2018-06-12 14:49:49,662 [WARN] from slick.basic.DatabaseConfig in play-dev-mode-akka.actor.default-dispatcher-2 - Use `profile` instead of `driver`. The latter is deprecated since Slick 3.2 and will be removed.
-2018-06-12 14:49:50,006 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-06-15 16:31:38,777 [WARN] from slick.basic.DatabaseConfig in play-dev-mode-akka.actor.default-dispatcher-6 - Use `profile` instead of `driver`. The latter is deprecated since Slick 3.2 and will be removed.
+2018-06-15 16:31:39,185 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev)

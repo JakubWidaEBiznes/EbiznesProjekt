@@ -54,8 +54,8 @@ PUT product/:{product-id} <= {product object, with categories, and keywords}
 GET user/:{user-id}
 	# gets all info about user. If logged in, also their cart and orders.
 
-GET admin/:{user-id}
-	# gets all administrative data, orders, their state etc. only if logged in and user is admin.
+GET orders/:{user-id}
+	# gets all administrative orders data, their state etc. only if logged in and user is admin.
 
 POST cart/:{user-id} <= {list of product id's to put in cart}
 	# adds items to cart of user.
