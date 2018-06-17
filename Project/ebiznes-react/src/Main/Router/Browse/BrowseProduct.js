@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 export default function BrowseProduct(props){
 
@@ -10,13 +11,15 @@ const keyword = (keyword)=>{return(
 
 	return(
 		props.products.map((product)=>{return(
-			<div key={product.id}>
-			<h2>{product.name}</h2>
-			<p>{product.price}</p>
-			<p>{product.stock}</p>
-			{product.keywords.map((k)=>{return(
-				keyword(k)
-			)})}
+			<div key={product.id} className="m-1 w-25 d-inline-block">
+			<div className="card  " >
+				<h2><Link to={"/product/"+product.id}>{product.name}</Link></h2>
+				<p>{product.price}</p>
+				<p>{product.stock}</p>
+				{product.keywords.map((k)=>{return(
+					keyword(k)
+				)})}
+			</div>
 			</div>
 		)})
 	)

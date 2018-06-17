@@ -6,8 +6,8 @@ const sampleProduct1 = {
 	name:"tomato",
 	description:"a red vegetable",
 	adddate:"01:10:1994",
-	stock:"1000",
 	price:0.5,
+	picture:"pic1.png",
 	keywords:["red","vegetable"],
 	categories:["vegetable"]
 	}
@@ -17,8 +17,8 @@ const sampleProduct2 = {
 	name:"sandwich",
 	description:"bread with ham",
 	adddate:"01:12:1995",
-	stock:"2",
 	price:2.5,
+	picture:"pic2.png",
 	keywords:["sammich","butter","ham"],
 	categories:["breads","meats"]
 	}
@@ -28,8 +28,8 @@ const sampleProduct3 = {
 	name:"ciabatta",
 	description:"italian baguette",
 	adddate:"06:12:1998",
-	stock:"15",
 	price:4,
+	picture:"pic3.png",
 	keywords:["italian","baguette"],
 	categories:["breads"]
 	}
@@ -62,7 +62,7 @@ export default class Products{
     	});
 		}
 
-	static editProduct(oldProduct,newProduct){
+	static removeProduct(id){
 		return new Promise((resolve)=>{
         setTimeout(resolve("success"), 1000);
     	});

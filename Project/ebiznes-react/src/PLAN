@@ -57,10 +57,10 @@ GET user/:{user-id}
 GET orders/:{user-id}
 	# gets all administrative orders data, their state etc. only if logged in and user is admin.
 
-POST cart/:{user-id} <= {list of product id's to put in cart}
+POST cart/:{user-id} <= {product id + number of said product to add to cart}
 	# adds items to cart of user.
 	# may return error if something goes bad.
-DELETE cart/:{user-id} <= {list of product id's to remove from cart}
+DELETE cart/:{user-id} <= {product id + number of said product to remove from cart}
 	# removes items from cart.
 	# may return error if something goes bad.
 
@@ -91,8 +91,8 @@ Product
 	name:String
 	description:String
 	adddate:String
-	stock:Number
 	price:Number
+	picture:String
 	keywords:[String]
 	categories:[String]
 
@@ -112,3 +112,12 @@ Address:
 	street:String
 	housenum:String
 	contactTelephone:String
+
+
+TODO:
+	1. buy product
+	2. Product view protptype
+	3. user view prototype
+	4. login api - pseudo rest
+	5. full product view
+	6. full user view

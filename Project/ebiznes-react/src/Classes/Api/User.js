@@ -1,22 +1,20 @@
 import {Api} from './Api'
 
 const sampleProduct1 = {
-	id:0,
+	id:1,
 	name:"tomato",
 	description:"a red vegetable",
 	adddate:"01:10:1994",
-	stock:"2",
 	price:0.5,
 	keywords:["red","vegetable"],
 	categories:["vegetable"]
 	}
 
 const sampleProduct2 = {
-	id:0,
+	id:2,
 	name:"sandwich",
 	description:"bread with ham",
 	adddate:"01:12:1995",
-	stock:"1",
 	price:2.5,
 	keywords:["sammich","butter","ham"],
 	categories:["breads","meats"]
@@ -30,11 +28,11 @@ const sampleAddress1 = {
 	contactTelephone:"+48125641323"
 	}
 
-const sampleUser1 = {
+var sampleUser1 = {
 	id:0,
 	name:"Joe",
 	joindate:"01:10:1985",
-	isAdmin:false,
+	isAdmin:true,
 	cart:sampleCart1,
 	address:sampleAddress1,
 	orders:[sampleOrder1,sampleOrder2]
@@ -59,6 +57,9 @@ const sampleOrder2 = {
 	address:sampleAddress1
 	}
 
+sampleUser1.cart = sampleCart1;
+sampleUser1.orders = [sampleOrder1,sampleOrder2];
+
 export default class User{
 
 static getUser(userId){
@@ -73,20 +74,22 @@ static getOrders(userId){
     });
 	}
 
-static addToCart(userId,products){
+static addToCart(userId,productId){
 	return new Promise((resolve)=>{
 		setTimeout(resolve("success"), 1000);
     });
 	}
 
-static removeFromCart(userId,products){
+static removeFromCart(userId,productId){
 	return new Promise((resolve)=>{
+		console.log("REMOVING FROM CART:",userId,productId);
 		setTimeout(resolve("success"), 1000);
     });
 	}
 
-static buyCart(userId){
+static buyCart(userId,address){
 	return new Promise((resolve)=>{
+		console.log("BUYING CART",userId);
 		setTimeout(resolve("success"), 1000);
     });
 	}

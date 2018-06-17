@@ -57,10 +57,10 @@ export default class Browse extends Component {
 						newcats[a] = this.state.categories[a]
 						}
 					}
-				this.setState({products:data.products,keywords:new Set(data.keywords),categories:newcats,error:""})
+				this.setState({products:data.products,categories:newcats,error:""})
 			})
 			.catch((err)=>{
-				this.setState({products:[],keywords:new Set([]),categories:{},error:"cannot retrieve data"})
+				this.setState({products:[],categories:{},error:"cannot retrieve data"})
 			})
 		}
 
