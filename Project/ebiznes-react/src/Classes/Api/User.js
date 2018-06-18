@@ -44,16 +44,20 @@ const sampleCart1 = {
 	}
 
 const sampleOrder1 = {
+	id:1,
 	user:sampleUser1,
 	products:[sampleProduct1,sampleProduct2],
 	state:"PENDING",
+	date:"01:10:2015",
 	address:sampleAddress1
 	}
 
 const sampleOrder2 = {
+	id:2,
 	user:sampleUser1,
 	products:[sampleProduct1],
-	state:"RESOLVED",
+	state:"CANCELLED",
+	date:"01:10:2015",
 	address:sampleAddress1
 	}
 
@@ -64,18 +68,21 @@ export default class User{
 
 static getUser(userId){
 	return new Promise((resolve)=>{
+		console.log("GET USER",userId);
 		setTimeout(resolve(sampleUser1), 1000);
     });
 	}
 
-static getOrders(userId){
+static getAllOrders(userId){
 	return new Promise((resolve)=>{
+		console.log("GET ALL ORDERS",userId);
 		setTimeout(resolve([sampleOrder1,sampleOrder2]), 1000);
     });
 	}
 
 static addToCart(userId,productId){
 	return new Promise((resolve)=>{
+		console.log("ADD TO CART",userId,productId);
 		setTimeout(resolve("success"), 1000);
     });
 	}
@@ -96,12 +103,14 @@ static buyCart(userId,address){
 
 static resolveOrder(orderId,decision){
 	return new Promise((resolve)=>{
+		console.log("RESOLVING ORDER",orderId,decision);
 		setTimeout(resolve("success"), 1000);
     });
 	}
 
 static makeAdmin(userId){
 	return new Promise((resolve)=>{
+		console.log("MAKE ADMIN",userId);
 		setTimeout(resolve("success"), 1000);
     });
 }

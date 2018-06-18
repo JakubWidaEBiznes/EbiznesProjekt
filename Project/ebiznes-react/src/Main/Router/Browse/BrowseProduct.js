@@ -14,11 +14,13 @@ const keyword = (keyword)=>{return(
 			<div key={product.id} className="m-1 w-25 d-inline-block">
 			<div className="card  " >
 				<h2><Link to={"/product/"+product.id}>{product.name}</Link></h2>
-				<p>{product.price}</p>
-				<p>{product.stock}</p>
+				<p>Price: <b>{product.price}</b>$</p>
+				<p>{product.description.substring(0,128)}</p>
+				<div>
 				{product.keywords.map((k)=>{return(
 					keyword(k)
 				)})}
+				</div>
 			</div>
 			</div>
 		)})

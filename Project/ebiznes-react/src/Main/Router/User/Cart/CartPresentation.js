@@ -74,7 +74,6 @@ const Addr=()=>{return(
 		)}
 	return(
 		<div key="CartPresentation">
-			<p>Cart</p>
 			{this.props.data.user.cart && <div>
 				<table className="table">
 				<thead>

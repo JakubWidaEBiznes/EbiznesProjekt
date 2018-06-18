@@ -24,7 +24,7 @@ const sampleProduct2 = {
 	}
 
 const sampleProduct3 = {
-	id:2,
+	id:3,
 	name:"ciabatta",
 	description:"italian baguette",
 	adddate:"06:12:1998",
@@ -45,25 +45,28 @@ export default class Products{
 
 	static getSearch(categories,keywords){
 		return new Promise((resolve)=>{
-				console.log("searching",categories,keywords)
+				console.log("GET SEARCH",categories,keywords)
         setTimeout(resolve(sampleSearchResult), 1000);
     	});
 		}
 
 	static getProduct(id){
 		return new Promise((resolve)=>{
-        setTimeout(resolve(sampleProduct1), 1000);
+				console.log("GET PRODUCT",id)
+        setTimeout(resolve(sampleProduct3), 1000);
     	});
 		}
 
 	static addProduct(product){
 		return new Promise((resolve)=>{
+				console.log("ADD PRODUCT",product)
         setTimeout(resolve("success"), 1000);
     	});
 		}
 
 	static removeProduct(id){
 		return new Promise((resolve)=>{
+				console.log("REMOVE PRODUCT",id)
         setTimeout(resolve("success"), 1000);
     	});
 		}

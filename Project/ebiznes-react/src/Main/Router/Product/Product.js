@@ -23,20 +23,20 @@ getProduct =()=>{
 getUser =()=>{
 	if(this.props.auth.user.isLogged){
 		this.props.api.user.getUser(this.props.auth.user.id)
-			.then((user)=>{ console.log("user",user); this.setState({user:user})})
+			.then((user)=>{this.setState({user:user})})
 			.catch((error)=>{this.setState({error:JSON.stringify(error)})})
 		}
 	}
 addToCart =()=>{
-	if(this.props.auth.user.logged && this.state.product){
-		this.props.api.user.cart(this.props.auth.user.id,this.props.params.id,this.state.cartNum)
+	if(this.props.auth.user.isLogged && this.state.product){
+		this.props.api.user.addToCart(this.props.auth.user.id,this.props.params.id)
 			.then((user)=>{this.getUser(); this.getProduct()})
 			.catch((error)=>{this.setState({error:JSON.stringify(error)})})
 		}
 	}
 removeProduct =()=>{
-	if(this.props.auth.user.logged && this.props.auth.user.isAdmin && this.state.product){
-		this.props.api.product.removeProduct(this.state.product.id)
+	if(this.props.auth.user.isLogged && this.props.auth.user.isAdmin && this.state.product){
+		this.props.api.products.removeProduct(this.state.product.id)
 			.then((user)=>{this.getUser(); this.getProduct();})
 			.catch((error)=>{this.setState({error:JSON.stringify(error)})})
 		}
@@ -45,7 +45,7 @@ removeProduct =()=>{
 render(){
 	let controller = {addToCart:this.addToCart,incCart:this.incCart,decCart:this.decCart,removeProduct:this.removeProduct}
 	return(
-			<ProductPresentation data={this.state} controller={controller} in/>
+			<ProductPresentation data={this.state} auth={this.props.auth} controller={controller} in/>
 		)
 	}
 

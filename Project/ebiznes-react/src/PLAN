@@ -103,7 +103,8 @@ Cart
 Order
 	user:USERINFO
 	products:[PRODUCT]
-	state:String #PENDING, RESOLVED
+	state:String #PENDING, CANCELLED, SENT
+	date:String
 	address:ADDRESS
 
 Address:

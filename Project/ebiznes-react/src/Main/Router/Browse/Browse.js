@@ -37,15 +37,16 @@ export default class Browse extends Component {
 		}
 
 	setSearchText=(text)=>{
-		console.log("setting :",this.state.searchText,"to: ",text);
+
 		this.setState({searchText:text})
 		}
 
 	search = ()=>{
 		var self = this;
 		let searchedCategories = Object.keys(this.state.categories).filter((k)=>{return this.state.categories[k]})
-		let keywords = [...this.state.keywords] + self.state.searchText.split(" ").filter((e)=>{e.length});
-		console.log("searching--",searchedCategories,keywords);
+
+		let keywords = [...this.state.keywords].concat(self.state.searchText.split(" ").filter((e)=>{return(e.length)}));
+
 		this.props.api.products.getSearch(searchedCategories,keywords)
 			.then(data=>{
 				let newcats = {};

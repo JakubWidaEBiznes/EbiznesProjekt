@@ -16,7 +16,10 @@ export default function UserPresentation(props){
 			  	</li>
 					)})}
 			</ul>
+			<div>
+				<br/>
+				{props.data.tab && props.data.tabs[props.data.tab]}
+			</div>
 
-			{props.data.tab && props.data.tabs[props.data.tab]}
 		</div>
 	)}
